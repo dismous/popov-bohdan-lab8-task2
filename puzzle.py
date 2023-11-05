@@ -1,6 +1,19 @@
 """https://github.com/dismous/popov-bohdan-lab8-task2"""
 import numpy as np
 def validate_board(board):
+    """
+    checks if board is valid
+    >>> validate_board(["**** ****", "***1 ****",\
+        "**  3****", "* 4 1****", "     9 5 ",\
+             " 6  83  *", "3   2  **", "  8  2***",\
+                 "  2  ****"])
+    True
+    >>> validate_board(["**** ****", "***1 ****",\
+        "**  3****", "* 4 1****", "     9 5 ",\
+             " 6  83  *", "3   1  **", "  8  2***",\
+                 "  2  ****"])
+    False
+    """
     result = True
     matrix = []
     tmp_list = []
@@ -34,8 +47,7 @@ def validate_board(board):
                         break
                     else:
                         lin.append(t)
-            lin = []
-    
+            lin = []   
     for i in range(9): # checks color
         color_y.append(a[:, i].tolist())
         color_x.append(a[8 - i, :].tolist())
@@ -57,3 +69,6 @@ def validate_board(board):
 
     return result
 
+if __name__ == "__main__":
+    import doctest
+    print(doctest.testmod())
