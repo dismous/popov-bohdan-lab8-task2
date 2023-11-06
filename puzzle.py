@@ -32,7 +32,7 @@ def validate_board(board):
                         "3   2  **",\
                         "  8  2***",\
                         "  2  ****"])
-    FAlse
+    False
     """
     result = True
     matrix = []
